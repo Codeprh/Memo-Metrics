@@ -1,13 +1,9 @@
 # Memo-Metrics
 
-# Github Name(开源项目名称)
+# Introduction(简介)
 
-> 名称：
+> todo
 >
-> 1. 基于cncf微服务实践
-> 2. TodoApplication Metrics
-> 3. **419 Metrics（Service Mesh、Istio）**
-> 4. 419Todo Metrics（Service Mesh、Istio)
 
 # CNCF理论基础
 
