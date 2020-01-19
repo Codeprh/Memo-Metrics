@@ -8,7 +8,7 @@
     <artifactId>memo-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <name>memo MicroServices Training Project</name>
+    <name>Memo-Metrics</name>
     <url>https://github.com/Codeprh/Memo-Metrics</url>
 
     <properties>
