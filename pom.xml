@@ -21,6 +21,7 @@
     <modules>
         <module>memo-framework</module>
         <module>memo-gateway</module>
+        <module>memo-registration-center</module>
     </modules>
 
     <dependencyManagement>
