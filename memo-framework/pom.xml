@@ -11,8 +11,9 @@
     </parent>
 
     <artifactId>memo-framework</artifactId>
-    <name>memo-framework</name>
     <version>1.0.0</version>
+    <name>memo-framework</name>
+    <description>基础通用架构</description>
 
     <dependencies>
         <dependency>
@@ -28,6 +29,15 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
