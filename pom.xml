@@ -22,6 +22,9 @@
         <module>memo-framework</module>
         <module>memo-gateway</module>
         <module>memo-registration-center</module>
+        <module>memo-authority</module>
+        <module>memo-simulator</module>
+        <module>memo-demo-api</module>
     </modules>
 
     <dependencyManagement>
