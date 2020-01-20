@@ -25,6 +25,7 @@
         <module>memo-authority</module>
         <module>memo-simulator</module>
         <module>memo-demo-api</module>
+        <module>memo-demo-service</module>
     </modules>
 
     <dependencyManagement>
