@@ -3,40 +3,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>memo-parent</artifactId>
         <groupId>noah.memo</groupId>
+        <artifactId>memo-parent</artifactId>
         <version>1.0</version>
     </parent>
 
     <packaging>jar</packaging>
 
     <groupId>noah.memo</groupId>
-    <artifactId>memo-task-service</artifactId>
+    <artifactId>memo-authority-api</artifactId>
     <version>1.0.0</version>
-    <name>memo-task-service</name>
-    <description>memo核心模块：任务模块</description>
+    <name>memo-authority-api</name>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
 
     <build>

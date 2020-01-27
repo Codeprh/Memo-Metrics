@@ -8,6 +8,8 @@
         <artifactId>memo-parent</artifactId>
         <version>1.0</version>
     </parent>
+    
+    <packaging>jar</packaging>
 
     <artifactId>memo-gateway</artifactId>
     <version>1.0.0</version>

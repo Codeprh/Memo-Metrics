@@ -9,10 +9,12 @@
         <version>1.0</version>
     </parent>
 
+    <packaging>jar</packaging>
+
     <groupId>noah.memo</groupId>
-    <artifactId>memo-authority</artifactId>
+    <artifactId>memo-authority-service</artifactId>
     <version>1.0.0</version>
-    <name>memo-authority</name>
+    <name>memo-authority-service</name>
     <description>权限认证服务</description>
 
     <properties>

@@ -9,6 +9,8 @@
         <version>1.0</version>
     </parent>
 
+    <packaging>jar</packaging>
+
     <groupId>noah.memo</groupId>
     <artifactId>memo-registration-center</artifactId>
     <version>1.0.0</version>
