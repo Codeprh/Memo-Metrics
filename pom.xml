@@ -29,8 +29,12 @@
 
         <module>memo-demo-api</module>
         <module>memo-demo-service</module>
+
         <module>memo-task-api</module>
         <module>memo-task-service</module>
+
+        <module>memo-notify-api</module>
+        <module>memo-notify-service</module>
     </modules>
 
     <dependencyManagement>
