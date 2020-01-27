@@ -26,8 +26,11 @@
         <module>memo-registration-center</module>
         <module>memo-authority</module>
         <module>memo-simulator</module>
+
         <module>memo-demo-api</module>
         <module>memo-demo-service</module>
+        <module>memo-task-api</module>
+        <module>memo-task-service</module>
     </modules>
 
     <dependencyManagement>
