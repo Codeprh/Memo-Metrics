@@ -17,7 +17,7 @@
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <apollo.version>1.0.0</apollo.version>
-        <cat.version>3.0.0</cat.version>
+        <cat.version>2.0.0</cat.version>
     </properties>
 
     <modules>
