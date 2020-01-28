@@ -22,22 +22,30 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>noah.memo</groupId>
+            <artifactId>memo-framework</artifactId>
+            <version>1.0.0</version>
         </dependency>
+
+        <!--api依赖-->
+        <dependency>
+            <groupId>noah.memo</groupId>
+            <artifactId>memo-authority-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>noah.memo</groupId>
+            <artifactId>memo-task-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>noah.memo</groupId>
+            <artifactId>memo-notify-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

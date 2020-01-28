@@ -22,6 +22,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>noah.memo</groupId>
+            <artifactId>memo-framework</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
