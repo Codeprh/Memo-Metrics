@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2020-01-29 15:13
  */
 @RestController
-@RequestMapping("/hello")
+@RequestMapping(value = "/hello")
 public class HelloController {
 
-    @GetMapping(name = "/world")
+    @GetMapping(value = "/world")
     public String helloworld() {
         return "hello world";
     }
