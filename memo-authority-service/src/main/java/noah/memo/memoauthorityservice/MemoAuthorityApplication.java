@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "noah.memo")
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCircuitBreaker
