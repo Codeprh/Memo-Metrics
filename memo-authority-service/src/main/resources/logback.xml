@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="springAppName" value="authority-service"
-              source="spring.application.name"/>
-    <property name="file_path" value="/data/memo-log/${springAppName}/"/>
-    <property name="save_day" value="7"/>
+    <property name="springAppName" value="authority-service"/>
+    <property name="file_path" value="/data/memo/${springAppName}/"/>
+    <property name="save_day" value="14"/>
+    <define name="log_ip" class="noah.memo.memoframework.bean.log.LogbackIpConfig"/>
 
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level - %msg%n</pattern>
         </encoder>
     </appender>
 
     <appender name="consoleFile"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${file_path}console.log</file>
+        <file>${file_path}console-${log_ip}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${file_path}console.log.%d{yyyyMMdd}-%i.zip
+            <FileNamePattern>${file_path}console.log.%d{yyyyMMdd}-${log_ip}-%i.zip
             </FileNamePattern>
-            <MaxHistory>7</MaxHistory>
+            <MaxHistory>${save_day}</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <MaxFileSize>100MB</MaxFileSize>
@@ -28,17 +28,15 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-
     <logger name="noah.memo" level="DEBUG" additivity="true">
         <appender-ref ref="consoleFile"/>
     </logger>
 
     <appender name="rollingFile"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="com.candao.irms.log.filter.MainThreadFilter"></filter>
-        <file>${file_path}${springAppName}.log</file>
+        <file>${file_path}${springAppName}-${log_ip}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${file_path}${springAppName}.log.%d{yyyyMMdd}-%i.zip
+            <FileNamePattern>${file_path}${springAppName}-${log_ip}.log.%d{yyyyMMdd}-%i.zip
             </FileNamePattern>
             <MaxHistory>${save_day}</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy
@@ -47,8 +45,9 @@
             </TimeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder>
-            <pattern>{"createTime":"%d{yyyy-MM-dd
-                HH:mm:ss.SSS}","flag":%X{flag},"logIp":"%X{ip}","msg":"%X{mesg}","cacheOpt":"%X{cacheOpt}","cacheValSize":%X{cacheValSize},"className":"%X{className}","clientIp":"%X{clientIp}","clientType":"%X{clientType}","connCount":%X{connCount},"costTime":%X{costTime},"isErr":%X{isErr},"errName":"%X{errName}","keyOrSql":"%X{keyOrSql}","methodName":"%X{methodName}","restUrl":"%X{restUrl}","step":%X{step},"traceId":"%X{X-B3-TraceId:-}","parentSpanId":"%X{X-B3-ParentSpanId:-}","spanId":"%X{X-B3-SpanId:-}","sysName":"${springAppName}","logLever":"%level","thread":"%thread"}%n
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%level] [%X{className}] [%X{methodName}] [%thread] [%msg]
+                [%X{clientType}] [%X{step}] [%X{flag}] [%X{ip}] [%X{clientIp}] [%X{costTime}] [%X{isErr}] [%X{errName}]
+                [%X{logId}] [${springAppName}] [%X{actionName}]%n
             </pattern>
         </encoder>
     </appender>
@@ -56,7 +55,6 @@
     <logger name="noah.memo" level="INFO" additivity="true">
         <appender-ref ref="rollingFile"/>
     </logger>
-
     <!-- TRACE, DEBUG, INFO, WARN, ERROR, ALL, OFF -->
     <root level="INFO">
         <appender-ref ref="console"/>

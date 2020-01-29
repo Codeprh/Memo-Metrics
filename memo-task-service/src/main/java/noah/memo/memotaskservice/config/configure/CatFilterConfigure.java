@@ -1,9 +1,13 @@
 package noah.memo.memotaskservice.config.configure;
 
+import noah.memo.memoframework.cat.CatRestInterceptor;
 import noah.memo.memoframework.cat.CatServletFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Collections;
 
 
 @Configuration
@@ -19,4 +23,5 @@ public class CatFilterConfigure {
         registration.setOrder(1);
         return registration;
     }
+
 }
