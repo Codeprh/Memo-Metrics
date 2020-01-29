@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @EnableApolloConfig
 
 @EntityScan("noah.memo")
-@RequestMapping
 public class MemoAuthorityApplication {
 
     @RequestMapping(method = RequestMethod.GET, name = "/hello")
