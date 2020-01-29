@@ -49,6 +49,17 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.61</version>
         </dependency>
+
+        <!--noah.memo.memoframework.utils.FastDateUtils-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

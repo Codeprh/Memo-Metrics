@@ -5,8 +5,10 @@ import noah.memo.memoauthorityapi.exception.AuthorityException;
 import noah.memo.memoauthorityservice.service.AccountService;
 import noah.memo.memoframework.bean.response.RspData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2020-01-28 16:46
  */
 @RestController
-@RequestMapping(value = "/foo/account")
+@RequestMapping(value = "/dc/account")
 public class AccountController {
 
     @Autowired
@@ -29,7 +31,7 @@ public class AccountController {
      * @param id
      * @return
      */
-    @RequestMapping(name = "/getCurrnetAccount/{id}")
+    @RequestMapping(name = "/getCurrnetAccount/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public RspData getCurrnetAccount(@PathVariable(value = "id") Integer id) {
 
         Account account = accountService.getCurrentAccount(id);
