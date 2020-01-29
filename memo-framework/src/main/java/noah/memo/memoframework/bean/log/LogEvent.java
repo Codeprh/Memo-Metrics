@@ -8,8 +8,7 @@ import java.io.Serializable;
 /**
  * 日志实体类
  *
- * @author max
- * date 2017年5月10日 下午11:42:40
+ * @author noah
  */
 public class LogEvent implements Serializable {
 

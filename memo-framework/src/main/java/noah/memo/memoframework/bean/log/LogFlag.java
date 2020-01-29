@@ -6,8 +6,7 @@ import com.google.gson.JsonObject;
 /**
  * 日志类型
  *
- * @author max
- * date 2017年5月10日 下午11:18:44
+ * @author noah
  */
 public enum LogFlag {
 	
