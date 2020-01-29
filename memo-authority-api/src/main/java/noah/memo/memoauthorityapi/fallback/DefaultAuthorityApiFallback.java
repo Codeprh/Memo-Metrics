@@ -2,7 +2,6 @@ package noah.memo.memoauthorityapi.fallback;
 
 import noah.memo.memoauthorityapi.AuthorityApi;
 import noah.memo.memoauthorityapi.bean.Account;
-import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * 描述:
@@ -14,8 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class DefaultAuthorityApiFallback implements AuthorityApi {
 
     @Override
-    public Account getCurrentAccount(@PathVariable(value = "id") Integer id) {
-
+    public Account getCurrentAccount(Integer id) {
         return null;
     }
 }

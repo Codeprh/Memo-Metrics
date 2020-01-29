@@ -32,7 +32,7 @@ public class TaskListController {
      *
      * @return
      */
-    @RequestMapping(name = "/getList", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/getList", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public RspData getAccountTaskList(@RequestBody ReqData paramData) {
 
         Integer accountId = paramData.getAsInt("accountId");
