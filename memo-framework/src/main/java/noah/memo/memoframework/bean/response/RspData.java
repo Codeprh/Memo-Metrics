@@ -1,12 +1,18 @@
 package noah.memo.memoframework.bean.response;
 
 import com.google.gson.JsonObject;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * 响应数据
  *
  * @author noah
  */
+@Data
+@AllArgsConstructor
+@Builder
 public class RspData {
 
     public RspData() {
