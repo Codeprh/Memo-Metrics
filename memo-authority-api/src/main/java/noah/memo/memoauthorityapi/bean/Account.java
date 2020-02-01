@@ -37,7 +37,7 @@ public class Account implements Serializable {
 
     @Column(name = "login_password")
     private String loginPassword;
-    
+
     @Column(name = "email")
     private String email;
 

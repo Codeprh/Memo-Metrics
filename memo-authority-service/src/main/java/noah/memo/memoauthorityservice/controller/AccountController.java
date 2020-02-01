@@ -31,8 +31,8 @@ public class AccountController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/getCurrnetAccount/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public RspData getCurrnetAccount(@PathVariable(value = "id") Integer id) {
+    @RequestMapping(value = "/getCurrentAccount/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public RspData getCurrentAccount(@PathVariable(value = "id") Integer id) {
 
         Account account = accountService.getCurrentAccount(id);
 

@@ -28,4 +28,10 @@ public class BusinessException extends RuntimeException {
         this.msg = msg;
     }
 
+    public BusinessException(RspStatus status) {
+        super(status.getMsg());
+        this.code = status.getStatus();
+        this.msg = status.getMsg();
+    }
+
 }
