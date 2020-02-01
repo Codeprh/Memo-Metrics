@@ -1,4 +1,4 @@
-package noah.memo.memoregistrationcenter;
+package noah.memo.memotaskservice.config;
 
 import com.dianping.cat.Cat;
 import com.dianping.cat.message.Transaction;
@@ -8,16 +8,17 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
-
 import java.lang.reflect.Method;
 
+/**
+ * @author codingprh
+ */
 @Aspect
 @Component
-public class CatAopService {
+public class CatAop {
 
     @Around("@annotation(noah.memo.memoframework.annotation.CatAnnotation)")
     public Object aroundMethod(ProceedingJoinPoint pjp) {
-        System.out.println("hello  framework aop");
         MethodSignature joinPointObject = (MethodSignature) pjp.getSignature();
         Method method = joinPointObject.getMethod();
 
