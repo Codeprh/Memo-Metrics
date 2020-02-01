@@ -1,7 +1,6 @@
 package noah.memo.memoauthorityapi;
 
 import noah.memo.memoauthorityapi.bean.Account;
-import noah.memo.memoframework.annotation.CatAnnotation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
