@@ -2,6 +2,10 @@ package noah.memo.memoauthorityservice.service;
 
 import noah.memo.memoauthorityapi.bean.Account;
 import noah.memo.memoauthorityservice.repository.AccountRepository;
+import noah.memo.memoframework.controller.TokenUser;
+import noah.memo.memoframework.exception.BusinessException;
+import noah.memo.memoframework.log.Logger;
+import noah.memo.memoframework.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,10 +34,26 @@ public class AccountService {
 
         Optional<Account> optionalAccount = accountRepository.findById(id);
 
-        if (optionalAccount.isPresent()) {
-            return optionalAccount.get();
-        }
+        return optionalAccount.orElse(null);
 
-        return null;
+    }
+
+
+    /**
+     * 登录
+     *
+     * @param loginName     登录名
+     * @param loginPassword 密码
+     */
+    public String login(String loginName, String loginPassword) {
+        Account account = accountRepository.findByLoginNameAndLoginPassword(loginName, loginPassword);
+        if (account == null) {
+            throw new BusinessException("用户名或密码错误");
+        }
+        TokenUser user = new TokenUser();
+        user.setUserId(account.getId());
+        user.setLoginName(account.getLoginName());
+        // 30分钟
+        return JwtUtil.createJwt(1800000L, user);
     }
 }
