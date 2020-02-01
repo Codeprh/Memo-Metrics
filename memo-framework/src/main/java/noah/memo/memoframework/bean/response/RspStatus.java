@@ -71,7 +71,12 @@ public enum RspStatus {
     /**
      * 请求参数校验失败
      */
-    PARAM_VALID_ERROR(HttpServletResponse.SC_BAD_REQUEST, "Parameter Validation Error");
+    PARAM_VALID_ERROR(HttpServletResponse.SC_BAD_REQUEST, "Parameter Validation Error"),
+
+    /**
+     * 登录校验
+     */
+    LOGIN_AUTH_FAILED(HttpServletResponse.SC_UNAUTHORIZED, "Login Auth Fail");
 
     public int status;
     public String msg;
