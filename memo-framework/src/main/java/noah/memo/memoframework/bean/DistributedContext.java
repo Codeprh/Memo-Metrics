@@ -38,7 +38,6 @@ public class DistributedContext {
     public static DistributedContext newInstance(String logId, String platformKey) {
         DistributedContext context = new DistributedContext();
         context.logId = logId;
-        context.platformKey = platformKey;
         return context;
     }
 
@@ -105,10 +104,6 @@ public class DistributedContext {
      */
     private String clientIp;
     /**
-     * 运营商key
-     */
-    private String platformKey;
-    /**
      * 额外自定义对象
      */
     private Object extData;
@@ -116,7 +111,6 @@ public class DistributedContext {
      * 客户端类型{link ClientTypes}
      */
     private int clientType;
-
     /**
      * 接口名
      */
@@ -159,13 +153,6 @@ public class DistributedContext {
      */
     public String getClientIp() {
         return clientIp;
-    }
-
-    /**
-     * @return the platformKey
-     */
-    public String getPlatformKey() {
-        return platformKey;
     }
 
     /**
@@ -226,23 +213,15 @@ public class DistributedContext {
     }
 
     /**
-     * @param platformKey the platformKey to set
-     */
-    public void setPlatformKey(String platformKey) {
-        this.platformKey = platformKey;
-    }
-
-    /**
      * @param actionName the actionName to set
      */
     public void setActionName(String actionName) {
         this.actionName = actionName;
     }
 
-    public void setReqData(String actionName, int clientType, String platformKey) {
+    public void setReqData(String actionName, int clientType) {
         this.actionName = actionName;
         this.clientType = clientType;
-        this.platformKey = platformKey;
     }
 
     public String getReqDataString() {

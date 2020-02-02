@@ -96,21 +96,21 @@ public class LogPreFilter extends ZuulFilter {
 
     private void log(RequestContext ctx, HttpServletRequest req, String uri, String reqData) {
         try {
+
             LogEvent logEvent = new LogEvent();
+
             logEvent.time = System.currentTimeMillis();
             logEvent.clientIp = getClientIp(req, reqData);
             logEvent.flag = LogFlag.REQUEST.getFlag();
             logEvent.msg = reqData;
-            logEvent.restUrl = uri.toString();
-            String clientStr = getClientStr(uri);
-            //todo:logEvent.clientType = clientStr;
+            logEvent.restUrl = uri;
+
             DistributedContext distributedContext = DistributedContext.getContext();
             distributedContext.setTime(logEvent.time);
-            if (!req.getRequestURI().startsWith("/log")) {
-                Logger.info(logEvent);
-            }
+
+            Logger.info(logEvent);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.error("网关请求[日志获取客户端ip出错][原因=" + e.getMessage() + "]", e);
         }
     }
 
@@ -125,25 +125,9 @@ public class LogPreFilter extends ZuulFilter {
                 }
             }
         } catch (Exception e) {
-            System.out.println("getClientIp Err, reqData = " + reqData);
+            Logger.error("网关请求[日志获取客户端ip出错][原因=" + e.getMessage() + "]", e);
         }
         return clientIp;
-    }
-
-    /**
-     * 根据uri获取请求来源
-     *
-     * @param uri
-     * @return
-     */
-    public static String getClientStr(String uri) {
-        if (uri != null) {
-            String[] arr = uri.split("[/]");
-            if (arr.length > 3) {
-                return arr[2];
-            }
-        }
-        return null;
     }
 
 }

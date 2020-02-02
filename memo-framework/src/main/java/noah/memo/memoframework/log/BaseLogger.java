@@ -34,7 +34,6 @@ public class BaseLogger {
         MDC.put("clientType", context == null ? "0" : "" + context.getClientType());
         MDC.put("step", "" + context.getStepAndAdd());
         MDC.put("actionName", context == null || context.getActionName() == null ? "" : context.getActionName());
-        MDC.put("platformKey", context == null || context.getPlatformKey() == null ? "" : context.getPlatformKey());
         MDC.put("restUrl", logEvent.restUrl == null ? "" : logEvent.restUrl);
     }
 
