@@ -3,6 +3,7 @@ package noah.memo.memoauthorityapi;
 import feign.hystrix.FallbackFactory;
 import noah.memo.memoauthorityapi.bean.Account;
 import noah.memo.memoauthorityapi.fallback.DefaultAuthorityApiFallback;
+import noah.memo.memoframework.annotation.CatAnnotation;
 import noah.memo.memoframework.log.Logger;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
@@ -29,6 +30,7 @@ public interface AuthorityApi {
      */
     @RequestMapping(value = "/inner/authority/getCurrentAccount/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
+    @CatAnnotation
     Account getCurrentAccount(@PathVariable(value = "id") Integer id);
 
 

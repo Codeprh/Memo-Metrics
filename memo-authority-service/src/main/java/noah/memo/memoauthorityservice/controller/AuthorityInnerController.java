@@ -31,9 +31,4 @@ public class AuthorityInnerController implements AuthorityApi {
         return accountService.getCurrentAccount(id);
     }
 
-    @Override
-    public String hello() {
-        System.out.println("调用Hello成功");
-        return null;
-    }
 }
