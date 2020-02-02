@@ -1,8 +1,8 @@
 package noah.memo.memotaskservice.service;
 
+import noah.memo.memoauthorityapi.AuthorityApi;
 import noah.memo.memoframework.annotation.CatAnnotation;
 import noah.memo.memotaskapi.bean.TaskList;
-import noah.memo.memotaskservice.feignclient.AuthorityApiFeignClient;
 import noah.memo.memotaskservice.repository.TaskListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class TaskListService {
     TaskListRepository taskListRepository;
 
     @Autowired
-    AuthorityApiFeignClient authorityApiFeignClient;
+    AuthorityApi authorityApi;
 
     /**
      * 根据用户id获取任务列表
@@ -32,7 +32,8 @@ public class TaskListService {
      */
     public List<TaskList> getAccountTaskList(Integer accountId) {
         //测试用例
-        System.out.println("当前用户信息" + authorityApiFeignClient.getCurrentAccount(accountId));
+        authorityApi.hello();
+        System.out.println("当前用户信息" + authorityApi.getCurrentAccount(accountId));
         sleep();
         return taskListRepository.getAccountTaskList(accountId);
     }

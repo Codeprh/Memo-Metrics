@@ -30,4 +30,10 @@ public class AuthorityInnerController implements AuthorityApi {
     public Account getCurrentAccount(@PathVariable(value = "id") Integer id) {
         return accountService.getCurrentAccount(id);
     }
+
+    @Override
+    public String hello() {
+        System.out.println("调用Hello成功");
+        return null;
+    }
 }

@@ -16,6 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableApolloConfig
 
 @EntityScan("noah.memo")
+@ComponentScan(basePackages = {"noah.memo"})
+
 public class MemoTaskServiceApplication {
 
     public static void main(String[] args) {

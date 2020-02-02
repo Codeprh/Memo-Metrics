@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="springAppName" value="authority-service"/>
+    <property name="springAppName" value="gateway"/>
     <property name="file_path" value="/data/memo/${springAppName}/"/>
     <property name="save_day" value="14"/>
     <define name="log_ip" class="noah.memo.memoframework.bean.log.LogbackIpConfig"/>
-
 
     <!--====================控制台彩色输出====================-->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
