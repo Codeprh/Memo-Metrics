@@ -1,6 +1,5 @@
 package noah.memo.memogateway.gateway.filter.log;
 
-import com.candao.irms.log.ThreadLocalBean;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import noah.memo.memoframework.bean.DistributedContext;
