@@ -11,6 +11,8 @@ import java.io.StringWriter;
 
 public class Logger extends BaseLogger {
 
+    public static final String LINESEPARATOR = System.getProperty("line.separator", "\n");
+
     public static org.slf4j.Logger log = LoggerFactory.getLogger(Logger.class);
 
     public static void debug(String msg) {
@@ -30,6 +32,19 @@ public class Logger extends BaseLogger {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void info(LogEvent logEvent) {
+        StackTraceElement stack[] = Thread.currentThread().getStackTrace();
+        logEvent.className = stack[2].getClassName();
+        logEvent.methodName = stack[2].getMethodName();
+        String msg = logEvent.msg == null ? "" : logEvent.msg.toString();
+        msg = msg == null ? "" : msg.replace(LINESEPARATOR, "</br>");
+        logEvent.msg = msg;
+        setLogIp(logEvent);
+        setMDC(logEvent);
+        log.info(logEvent == null ? null : logEvent.toString());
+        MDC.clear();
     }
 
     public static void info(String msg) {

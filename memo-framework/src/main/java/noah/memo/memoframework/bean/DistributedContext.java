@@ -10,6 +10,7 @@ import java.util.UUID;
  * @author noah
  */
 public class DistributedContext {
+
     private static ThreadLocal<DistributedContext> threadLocal = new ThreadLocal<DistributedContext>();
 
     private DistributedContext(String clientIp) {
@@ -86,6 +87,7 @@ public class DistributedContext {
         return new DistributedContext();
     }
 
+
     /**
      * 开始时间
      */
@@ -119,6 +121,11 @@ public class DistributedContext {
      * 接口名
      */
     private String actionName;
+    /**
+     * 请求数据的字符串
+     */
+    private String reqDataString;
+
 
     // ===============================================getter===============================================
 
@@ -238,5 +245,11 @@ public class DistributedContext {
         this.platformKey = platformKey;
     }
 
+    public String getReqDataString() {
+        return reqDataString;
+    }
 
+    public void setReqDataString(String reqDataString) {
+        this.reqDataString = reqDataString;
+    }
 }
