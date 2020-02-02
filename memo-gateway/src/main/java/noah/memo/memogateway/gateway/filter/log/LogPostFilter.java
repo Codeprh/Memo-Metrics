@@ -100,7 +100,7 @@ public class LogPostFilter extends ZuulFilter {
             logEvent.restUrl = uri;
 
             logEvent.errName = errName;
-            logEvent.step = distributedContext.getStepAndAdd();
+            logEvent.step = distributedContext.getStep();
 
             Logger.info(logEvent);
             DistributedContext.remove();
