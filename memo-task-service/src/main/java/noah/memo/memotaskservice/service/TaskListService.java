@@ -31,20 +31,8 @@ public class TaskListService {
      * @return
      */
     public List<TaskList> getAccountTaskList(Integer accountId) {
-        //测试用例
-        authorityApi.hello();
         System.out.println("当前用户信息" + authorityApi.getCurrentAccount(accountId));
-        sleep();
         return taskListRepository.getAccountTaskList(accountId);
     }
 
-    @CatAnnotation
-    public void sleep() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-        }
-    }
 }
