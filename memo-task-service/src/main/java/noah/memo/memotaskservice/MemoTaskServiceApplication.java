@@ -11,7 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+// 必须要声明包名，否则不会对引入的jar进行扫描
+@EnableFeignClients(basePackages = {"noah.memo"})
 @EnableCircuitBreaker
 @EnableApolloConfig
 

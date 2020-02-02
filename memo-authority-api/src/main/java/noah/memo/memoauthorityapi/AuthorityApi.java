@@ -1,7 +1,8 @@
 package noah.memo.memoauthorityapi;
 
+import feign.hystrix.FallbackFactory;
 import noah.memo.memoauthorityapi.bean.Account;
-import noah.memo.memoframework.annotation.CatAnnotation;
+import noah.memo.memoframework.log.Logger;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author noah
  */
-@FeignClient(name = AuthorityApi.SERVICE_NAME, fallback = AuthorityApi.DefaultAuthorityApiFallback.class)
+@FeignClient(name = AuthorityApi.SERVICE_NAME, fallback = AuthorityApi.DefaultAuthorityApiFallback.class, path = "authoritys")
 public interface AuthorityApi {
 
     String SERVICE_NAME = "authority-service";
@@ -25,7 +26,6 @@ public interface AuthorityApi {
      */
     @RequestMapping(value = "/inner/authority/getCurrentAccount/{id}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
-    @CatAnnotation
     Account getCurrentAccount(@PathVariable(value = "id") Integer id);
 
     @PostMapping(value = "/hello")
@@ -43,6 +43,20 @@ public interface AuthorityApi {
         @Override
         public String hello() {
             System.out.println("hello调用失败");
+            return null;
+        }
+    }
+
+
+    /**
+     * fallback 与fallbackFactory不能同时使用
+     */
+    //    @Component
+    class DefaultAuthorFallbackFactory implements FallbackFactory<AuthorityApi> {
+
+        @Override
+        public AuthorityApi create(Throwable throwable) {
+            Logger.error("Fallback Error", throwable);
             return null;
         }
     }
