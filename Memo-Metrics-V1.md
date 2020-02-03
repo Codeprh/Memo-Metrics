@@ -16,3 +16,8 @@ springCloud的版本号为`Greenwich.RELEASE`
 
 ![image-20200121105147203](https://tva1.sinaimg.cn/large/006tNbRwgy1gb3zszczohj30ot0c140w.jpg)
 
+# TODO想法
+
+1. apollo配置ribbon的访问策略
+2. 
+

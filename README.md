@@ -2,8 +2,15 @@
 
 # Introduction(简介)
 
-> todo
+> Memo是多版本的概念验证微服务应用程序，简单记录个人Todo备忘录应用。介绍各个版本的技术栈。
 >
+> V1~V2版本：基于SpringCloud、Kubernetes、Docker、Eureka注册中心、Apollo配置中心、Zuul网关、Fegin微服务调用、Prometheus监控、Cat调用链监控、Hystrix熔断限流、xxl任务调度中心、ELK日志查询等
+>
+> V3版本：基于CNCF云原生平台，Service Mesh实现Istio架构
+>
+> 
+>
+> 
 
 # CNCF理论基础
 
