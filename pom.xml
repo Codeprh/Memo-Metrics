@@ -17,7 +17,6 @@
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
         <apollo.version>1.0.0</apollo.version>
-        <cat.version>2.0.0</cat.version>
     </properties>
 
     <modules>
@@ -80,12 +79,6 @@
                 <artifactId>apollo-client</artifactId>
                 <version>${apollo.version}</version>
             </dependency>
-            <!-- cat -->
-            <dependency>
-                <groupId>com.dianping.cat</groupId>
-                <artifactId>cat-client</artifactId>
-                <version>${cat.version}</version>
-            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -121,10 +114,6 @@
         <dependency>
             <groupId>com.ctrip.framework.apollo</groupId>
             <artifactId>apollo-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.dianping.cat</groupId>
-            <artifactId>cat-client</artifactId>
         </dependency>
     </dependencies>
 

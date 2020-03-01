@@ -8,9 +8,6 @@
 >
 > V3版本：基于CNCF云原生平台，Service Mesh实现Istio架构
 >
-> 
->
-> 
 
 # CNCF理论基础
 

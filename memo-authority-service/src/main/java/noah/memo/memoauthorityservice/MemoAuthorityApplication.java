@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"noah.memo"})
 @EnableCircuitBreaker
 @EnableApolloConfig
 @EntityScan("noah.memo")
