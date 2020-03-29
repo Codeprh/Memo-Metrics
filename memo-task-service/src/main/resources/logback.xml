@@ -3,7 +3,7 @@
     <property name="springAppName" value="task-service"/>
     <property name="file_path" value="/data/memo/${springAppName}/"/>
     <property name="save_day" value="14"/>
-    <define name="log_ip" class="noah.memo.memoframework.bean.log.LogbackIpConfig"/>
+    <define name="log_ip" class="noah.memo.framework.bean.log.LogbackIpConfig"/>
     
     <!--====================控制台彩色输出====================-->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
